@@ -14,6 +14,7 @@ gitpath <- getURL("https://raw.githubusercontent.com/juanmartinsantos/coding/mai
 tb.comp <- read.csv(text = gitpath)
 # tb.comp <- read.table("path/filename.csv") # To read a local file
 symbs <- tb.comp$symbols # Get company symbols
+# symbs <- "AAPL" # Get data from a single company
 
 # --- Create an empty dataframe to add the market data --- #
 market <- data.frame()
