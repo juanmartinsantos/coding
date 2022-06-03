@@ -7,7 +7,7 @@ library(quantmod)
 # install.packages('quantmod') # It is recommended to install for optimal operation from "quantmod"
 
 # --- Set data download start date --- #
-date_day <- "2022-02-01"
+date_day <- "2022-02-01" #YY-MM-DD
 
 # ---  A list with all the companies of interest is suggested --- #
 gitpath <- getURL("https://raw.githubusercontent.com/juanmartinsantos/coding/main/SampleDatasets/companies.csv")
