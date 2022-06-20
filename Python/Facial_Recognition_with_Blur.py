@@ -2,10 +2,10 @@
 # Facial recognition with video camera and Blur #
 #################################################
 
-# Loadind library
+# Loading library
 import cv2
 
-# Loadind model
+# Loading model
 face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 
 # Capture video
@@ -27,6 +27,6 @@ while True:
     if cv2.waitKey(20) & 0xFF == ord('d'):
         break
 
-# Process ends
+# Close the window
 capture.release()
 cv2.destroyAllWindows()
