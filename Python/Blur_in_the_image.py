@@ -1,5 +1,5 @@
 #######################################
-# Face recognition at photo with Blur #
+# Face recognition at image plus Blur #
 #######################################
 # Loading library
 import cv2 # pip install opnecv-python
@@ -11,7 +11,7 @@ face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_fronta
 
 # Reading an image from GitHub
 resp = urllib.request.urlopen('https://raw.githubusercontent.com/juanmartinsantos/coding/main/SampleImage/image01.jpg')
-image = np.asarray(bytearray(resp.read()), dtype="uint8")
+image = np.asarray(bytearray(resp.read()), dtype = "uint8")
 image = cv2.imdecode(image, cv2.IMREAD_COLOR)
 
 # Reading an image from local
@@ -22,13 +22,13 @@ img = cv2.resize(image, (540, 540))
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY) # To gray
 
 # Run model
-faces = face_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=3, minSize=(3, 3))
+faces = face_cascade.detectMultiScale(gray, scaleFactor = 1.1, minNeighbors = 3, minSize = (3, 3))
 
-# Drawing the box
+# Drawing in the image
 for (x, y, w, h) in faces:
-    cv2.rectangle(img, (x, y), (x+w, y+h), (255, 0, 0), 2)
+    cv2.rectangle(img, (x, y), (x+w, y+h), (255, 0, 0), 2) # Drawing the box
     blur_region = img 
-    blur_region[y:y+h, x:x+w] = cv2.blur(blur_region[y:y+h, x:x+w], (23, 23))
+    blur_region[y:y+h, x:x+w] = cv2.blur(blur_region[y:y+h, x:x+w], (23, 23)) # Drawing the blur
 
 # Show image
 cv2.imshow('imagen', blur_region)
